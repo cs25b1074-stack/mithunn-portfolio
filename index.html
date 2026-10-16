@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mithunn Sivakumar</title>
+<meta name="description" content="Mithunn Balaji Sivakumar — Computer Science, IIITDM Kancheepuram. Selected projects.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0f0e14;--fg:#f3efe8;--mut:#9a95a6;--line:#2a2733;--a:#ff6b4a;--b:#7c5cff;--c:#14b8a6;--grad:linear-gradient(110deg,var(--a),var(--b) 55%,var(--c));color-scheme:dark}
+@media(prefers-color-scheme:light){:root{--bg:#f7f3ec;--fg:#17151c;--mut:#6c6877;--line:#ddd6ca;color-scheme:light}}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font:400 17px/1.6 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--b);color:#fff}
+.serif{font-family:'Instrument Serif',Georgia,serif;font-weight:400;letter-spacing:-.02em}
+.mono{font:500 12px/1.4 'JetBrains Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--mut)}
+.wrap{max-width:1240px;margin:0 auto;padding:0 clamp(22px,5vw,56px)}
+#bar{position:fixed;top:0;left:0;height:2px;width:100%;background:var(--grad);transform-origin:0 50%;transform:scaleX(0);z-index:50}
+#glow{position:fixed;width:520px;height:520px;margin:-260px 0 0 -260px;border-radius:50%;background:radial-gradient(circle,rgba(124,92,255,.22),transparent 65%);pointer-events:none;z-index:0;left:50%;top:40%;transition:left .35s ease-out,top .35s ease-out}
+header{position:fixed;inset:0 0 auto;z-index:40;display:flex;justify-content:space-between;align-items:center;padding:22px clamp(22px,5vw,56px);mix-blend-mode:difference;color:#fff}
+header a{font-size:14px}
+#count{font:500 12px 'JetBrains Mono',monospace;letter-spacing:.1em}
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 0 clamp(36px,6vw,72px);z-index:1}
+.hero h1{font-size:clamp(64px,15.5vw,250px);line-height:.88;margin-left:-.04em}
+.hero h1 .ln{display:block;overflow:hidden;padding-bottom:.06em}
+.hero h1 .ln span{display:inline-block;transform:translateY(105%);animation:up .75s cubic-bezier(.16,1,.3,1) forwards}
+.hero h1 .ln:nth-child(2) span{animation-delay:.09s}
+.hero h1 em{font-style:italic;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;padding-right:.08em}
+@keyframes up{to{transform:none}}
+.meta{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-top:clamp(28px,4vw,56px);padding-top:22px;border-top:1px solid var(--line);opacity:0;animation:fade .6s .6s forwards}
+@keyframes fade{to{opacity:1}}
+.meta p{max-width:34ch;color:var(--mut)}
+.meta .r{text-align:right}
+.ticker{overflow:hidden;border-block:1px solid var(--line);padding:18px 0;position:relative;z-index:1;background:var(--bg)}
+.ticker div{display:flex;gap:48px;white-space:nowrap;width:max-content;animation:run 38s linear infinite;font-size:clamp(28px,4vw,48px)}
+.ticker span:nth-child(even){color:var(--b)}
+@keyframes run{to{transform:translateX(-50%)}}
+.stackwrap{position:relative;z-index:1}
+.panel{position:sticky;top:0;height:100svh;display:flex;align-items:center;border-radius:34px 34px 0 0;border-top:1px solid var(--line);overflow:hidden;transform-origin:50% 0;will-change:transform}
+.panel::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(900px 600px at 85% 20%,var(--g1),transparent 60%),radial-gradient(700px 500px at 5% 100%,var(--g2),transparent 60%),var(--bg)}
+.panel .wrap{width:100%;display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(24px,5vw,72px);align-items:center}
+.num{font-size:clamp(90px,15vw,220px);line-height:.8;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;opacity:.95}
+.panel h2{font-size:clamp(46px,7vw,104px);line-height:.95;margin:22px 0 18px}
+.panel p.d{color:var(--mut);max-width:38ch;font-size:18px}
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:26px}
+.tags span{font-size:13px;padding:6px 13px;border:1px solid var(--line);border-radius:99px;color:var(--mut)}
+.st{display:inline-flex;align-items:center;gap:8px}
+.st.live::before{content:"";width:8px;height:8px;border-radius:50%;background:#34d399;box-shadow:0 0 0 0 #34d399;animation:ping 2s infinite}
+@keyframes ping{70%{box-shadow:0 0 0 10px transparent}}
+.frame{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#000;box-shadow:0 40px 90px -30px rgba(124,92,255,.5);aspect-ratio:16/10;position:relative;transition:transform .5s}
+.frame:hover{transform:translateY(-6px)}
+.frame .bar{height:30px;background:#1b1923;display:flex;align-items:center;gap:6px;padding:0 12px;font:500 11px 'JetBrains Mono',monospace;color:#8f8a9c}
+.frame .bar i{width:9px;height:9px;border-radius:50%;background:#3a3646}
+.frame .bar b{margin-left:10px;font-weight:400}
+.frame iframe{width:200%;height:calc(200% - 60px);border:0;transform:scale(.5);transform-origin:0 0;background:#fff}
+.frame a.o{position:absolute;inset:30px 0 0;z-index:2}
+.vis{aspect-ratio:16/10;border-radius:16px;border:1px solid var(--line);position:relative;overflow:hidden;background:linear-gradient(135deg,color-mix(in srgb,var(--g1) 60%,transparent),color-mix(in srgb,var(--g2) 60%,transparent))}
+.vis svg{position:absolute;inset:0;width:100%;height:100%}
+.kpis{position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr}
+.kpis div{padding:clamp(16px,2.4vw,30px);display:flex;flex-direction:column;justify-content:flex-end;border:0 solid var(--line);border-width:0 1px 1px 0}
+.kpis div:nth-child(2n){border-right:0}.kpis div:nth-child(n+3){border-bottom:0}
+.kpis b{font-size:clamp(40px,5.4vw,78px);line-height:1;font-weight:400;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.kpis small{font-size:.45em;margin-left:2px}
+.kpis span{margin-top:8px;font-size:11px}
+.go{display:inline-flex;gap:10px;margin-top:30px;padding-bottom:4px;border-bottom:1px solid var(--fg);font-size:15px;transition:.25s}
+.go:hover{gap:18px;color:var(--b);border-color:var(--b)}
+.about{position:relative;z-index:1;background:var(--bg);padding:clamp(90px,14vw,190px) 0;border-top:1px solid var(--line)}
+.about .wrap{display:grid;grid-template-columns:1fr 1.3fr;gap:clamp(30px,6vw,90px)}
+.about h2{font-size:clamp(44px,7vw,96px);line-height:.95}
+.about h2 em{font-style:italic;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;padding-right:.06em}
+.about p{font-size:20px;color:var(--mut);margin-bottom:18px;max-width:46ch}
+.tools{display:grid;grid-template-columns:repeat(2,1fr);gap:0;margin-top:40px;border-top:1px solid var(--line)}
+.tools div{padding:18px 0;border-bottom:1px solid var(--line)}
+.tools b{display:block;font-weight:500;font-size:15px;margin-top:6px}
+.contact{position:relative;z-index:1;background:var(--bg);border-top:1px solid var(--line)}
+.contact a.l{display:flex;justify-content:space-between;align-items:center;padding:clamp(22px,3.5vw,40px) 0;border-bottom:1px solid var(--line);font-size:clamp(40px,8vw,116px);line-height:1;position:relative;transition:padding .35s cubic-bezier(.16,1,.3,1)}
+.contact a.l span.a{font-size:.5em;transition:transform .35s}
+.contact a.l:hover{padding-left:24px;color:var(--b)}
+.contact a.l:hover span.a{transform:translate(-10px,0) rotate(-45deg)}
+footer{position:relative;z-index:1;background:var(--bg);padding:26px 0}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+@media(max-width:820px){
+ .panel{align-items:flex-start;padding-top:84px}
+ .panel .wrap{grid-template-columns:1fr;gap:16px}
+ .num{font-size:78px}.panel h2{margin:10px 0 10px}.frame,.vis{display:none}
+ .about .wrap{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.hero h1 .ln span{transform:none}.meta{opacity:1}}
+</style>
+</head>
+<body>
+<div id="bar"></div><div id="glow"></div>
+<header><a href="#top" class="serif" style="font-size:24px">M.</a><a href="#contact">Contact</a></header>
+
+<main id="top">
+<section class="hero"><div class="wrap">
+  <h1 class="serif"><span class="ln"><span>Mithunn</span></span><span class="ln"><span><em>Sivakumar</em></span></span></h1>
+  <div class="meta"><p>Computer Science, IIITDM Kancheepuram. Software, interfaces, and computer vision.</p></div>
+</div></section>
+
+<div class="ticker" aria-hidden="true"><div class="serif">
+<span>Tech Affairs</span><span>/</span><span>Pulse</span><span>/</span><span>Club Finder</span><span>/</span><span>AI Fitness Tracker</span><span>/</span><span>Factcheck AI</span><span>/</span>
+<span>Tech Affairs</span><span>/</span><span>Pulse</span><span>/</span><span>Club Finder</span><span>/</span><span>AI Fitness Tracker</span><span>/</span><span>Factcheck AI</span><span>/</span>
+</div></div>
+
+<div class="stackwrap" id="stack">
+ <section class="panel" style="--g1:rgba(255,107,74,.28);--g2:rgba(124,92,255,.22)"><div class="wrap">
+  <div><div class="num serif">01</div><h2 class="serif">Tech Affairs</h2><p class="d">Team website for campus events, schedules and updates.</p><div class="tags"><span>React</span><span>JavaScript</span><span>Tailwind</span><span>Vercel</span></div><a class="go" href="https://tech-affairs.vercel.app" target="_blank" rel="noreferrer"><span class="st live mono" style="color:inherit">Live</span> Open site ↗</a></div>
+  <div class="frame"><div class="bar"><i></i><i></i><i></i><b>tech-affairs.vercel.app</b></div><iframe src="https://tech-affairs.vercel.app" title="Tech Affairs live preview" loading="lazy" tabindex="-1"></iframe><a class="o" href="https://tech-affairs.vercel.app" target="_blank" rel="noreferrer" aria-label="Open Tech Affairs"></a></div>
+ </div></section>
+
+ <section class="panel" style="--g1:rgba(20,184,166,.26);--g2:rgba(255,107,74,.2)"><div class="wrap">
+  <div><div class="num serif">02</div><h2 class="serif">Pulse</h2><p class="d">Real-time payment status, pushed instead of polled. A shared-ledger system built for the DRUNIX Hackathon 2026 (NPCI × Citi). I led the frontend, benchmarks and delivery.</p><div class="tags"><span>React 18</span><span>Vite</span><span>Tailwind v4</span><span>WebSockets</span><span>Hyperledger Fabric</span></div><a class="go" href="https://github.com/cs25b1074-stack/citi" target="_blank" rel="noreferrer">View repository ↗</a></div>
+  <div class="vis"><div class="kpis"><div><b class="serif">&lt;20<small>ms</small></b><span class="mono">push on commit</span></div><div><b class="serif">~90<small>%</small></b><span class="mono">fewer status requests</span></div><div><b class="serif">0</b><span class="mono">polling load</span></div><div><b class="serif">82<small>%</small></b><span class="mono">smaller payload</span></div></div></div>
+ </div></section>
+
+ <section class="panel" style="--g1:rgba(124,92,255,.28);--g2:rgba(20,184,166,.2)"><div class="wrap">
+  <div><div class="num serif">03</div><h2 class="serif">Club Finder</h2><p class="d">Clubs, event times and classroom locations in one search.</p><div class="tags"><span>React</span><span>Node.js</span><span>Tailwind</span></div></div>
+  <div class="vis"><svg viewBox="0 0 400 250" fill="none" stroke="currentColor" style="color:var(--fg)"><rect x="40" y="40" width="320" height="38" rx="19" opacity=".5"/><circle cx="62" cy="59" r="7" opacity=".5"/><rect x="40" y="110" width="150" height="100" rx="14" opacity=".35"/><rect x="210" y="110" width="150" height="100" rx="14" opacity=".35"/><path d="M60 140h70M60 160h40M230 140h70M230 160h40" opacity=".5"/></svg></div>
+ </div></section>
+
+ <section class="panel" style="--g1:rgba(20,184,166,.26);--g2:rgba(255,107,74,.2)"><div class="wrap">
+  <div><div class="num serif">04</div><h2 class="serif">AI Fitness Tracker</h2><p class="d">Posture tracking and movement feedback from a camera feed.</p><div class="tags"><span>Python</span><span>OpenCV</span><span>MediaPipe</span></div></div>
+  <div class="vis"><svg viewBox="0 0 400 250" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--fg)"><g opacity=".7"><path d="M200 70v60M200 85l-40 30M200 85l40 30M200 130l-28 60M200 130l28 60M160 115l-18 36M240 115l18 36"/></g><g fill="var(--a)" stroke="none"><circle cx="200" cy="54" r="12"/><circle cx="200" cy="85" r="5"/><circle cx="160" cy="115" r="5"/><circle cx="240" cy="115" r="5"/><circle cx="200" cy="130" r="5"/><circle cx="172" cy="190" r="5"/><circle cx="228" cy="190" r="5"/></g><animateTransform attributeName="transform" type="translate" values="0 0;0 -4;0 0" dur="2.4s" repeatCount="indefinite"/></svg></div>
+ </div></section>
+
+ <section class="panel" style="--g1:rgba(124,92,255,.26);--g2:rgba(255,107,74,.2)"><div class="wrap">
+  <div><div class="num serif">05</div><h2 class="serif">Factcheck AI</h2><p class="d">A desktop interface for fact-checking workflows.</p><div class="tags"><span>AI</span><span>GUI</span></div></div>
+  <div class="vis"><svg viewBox="0 0 400 250" fill="none" stroke="currentColor" style="color:var(--fg)"><rect x="50" y="50" width="300" height="150" rx="12" opacity=".4"/><path d="M75 90h170M75 115h120M75 140h150" opacity=".45"/><circle cx="300" cy="135" r="28" stroke="var(--c)" stroke-width="3"/><path d="M287 135l9 10 18-20" stroke="var(--c)" stroke-width="3"/></svg></div>
+ </div></section>
+
+ 
+</div>
+
+<section class="about"><div class="wrap">
+  <h2 class="serif">Mithunn<br><em>Balaji</em><br>Sivakumar</h2>
+  <div>
+    <p>Computer Science and Engineering student at IIITDM Kancheepuram. Interested in web development, software, and computer vision.</p>
+    <p style="font-size:17px">Coordinator at the Developers Club</p>
+    <div class="tools">
+      <div><span class="mono">Frontend</span><b>React · Next.js · Tailwind · JavaScript</b></div>
+      <div><span class="mono">Backend</span><b>Node.js · Express · SQL · MongoDB</b></div>
+      <div><span class="mono">Languages</span><b>Python · C++</b></div>
+      <div><span class="mono">Vision &amp; tools</span><b>OpenCV · MediaPipe · Git · Vercel</b></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="contact" id="contact"><div class="wrap">
+  <a class="l serif" href="https://www.linkedin.com/in/mithunn-balaji-sivakumar-823019367/" target="_blank" rel="noreferrer">LinkedIn <span class="a">→</span></a>
+  <a class="l serif" href="https://github.com/cs25b1074-stack" target="_blank" rel="noreferrer">GitHub <span class="a">→</span></a>
+  <a class="l serif" href="https://www.instagram.com/mithunnbalaji_17/" target="_blank" rel="noreferrer">Instagram <span class="a">→</span></a>
+</div></section>
+</main>
+<footer><div class="wrap mono"><span>© <span id="y"></span> Mithunn Balaji Sivakumar</span><span>India</span></div></footer>
+
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+const bar=document.getElementById('bar'),glow=document.getElementById('glow');
+const panels=[...document.querySelectorAll('.panel')];
+function tick(){
+  const h=document.documentElement,max=h.scrollHeight-innerHeight;
+  bar.style.transform='scaleX('+(max>0?scrollY/max:0)+')';
+  panels.forEach((p,i)=>{
+    const n=panels[i+1];
+    if(n){const t=Math.min(1,Math.max(0,n.getBoundingClientRect().top/innerHeight));
+      p.style.transform='scale('+(1-(1-t)*.06)+')';p.style.filter='brightness('+(1-(1-t)*.55)+')';}
+  });
+}
+addEventListener('scroll',tick,{passive:true});addEventListener('resize',tick);tick();
+if(matchMedia('(pointer:fine)').matches)addEventListener('pointermove',e=>{glow.style.left=e.clientX+'px';glow.style.top=e.clientY+'px'});
+</script>
+</body>
+</html>
